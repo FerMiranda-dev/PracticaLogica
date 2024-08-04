@@ -1,0 +1,18 @@
+/*Escriba un programa que le solicite al usuario sus datos: 
+nombre de usuario, edad y una lista de sus películas favoritas. 
+Almacene la información y luego muéstrela en la consola. Tenga en cuenta que 
+la salida para las películas debe agregar un pequeño mensaje como:
+ 'La película {film} es una de mis favoritas'.*/
+
+const name = prompt("Introduce tu nombre de usuario:");
+const years = prompt("Introduce tu edad:");
+let favmovies = [];
+let movie;
+
+tope("Introduce tus películas favoritas. Escribe 'fin' para terminar.");
+while ((movie = prompt("Introduce una película:")) && movie.toLowerCase() !== 'end') {
+    favmovies.push(movie);
+}
+
+console.log(`\nNombre de usuario: ${name}\nEdad: ${years}\nPelículas favoritas:`);
+favmovies.forEach(film => console.log(`La película ${film} es una de mis favoritas.`));
