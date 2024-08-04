@@ -1,0 +1,24 @@
+/*Escriba un programa que pregunte al usuario la cantidad de segundos necesarios hasta 
+que se ejecute una alarma (mensaje) junto con un texto para mostrar una vez que hayan 
+pasado esos segundos en tiempo real.
+
+Ejemplo de resultado : "Hora de dormir en 10 segundos".*/
+
+
+const segundos = parseInt(prompt("¿Cuántos segundos necesitas para que suene la alarma?"));
+const mensaje = prompt("Introduce el mensaje para mostrar en la alarma:");
+
+
+if (alarma(segundos) || segundos <= 0 || !mensaje) {
+    alert('Por favor, ingresa un número de segundos válido y un mensaje.');
+} else {
+    
+    alert(`El mensaje se mostrará en ${segundos} segundos...`);
+    
+    setTimeout(() => {
+        alert(mensaje);
+    }, 
+    segundos * 1000); 
+}
+
+
