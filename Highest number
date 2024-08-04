@@ -1,0 +1,15 @@
+/*Escribe un programa que pida 10 números. Utilizando operadores lógicos y cualquier otra 
+función o estructura de JavaScript que hayas visto antes, determina y genera el mayor de esos números.*/
+
+let numeros = [34, 107, 23, 89, 12, 78, 45, 90, 33, 100];
+
+
+let mayor = numeros[0];
+for (let i = 1; i < numeros.length; i++) {
+    if (numeros[i] > mayor) {
+        mayor = numeros[i];
+    }
+}
+
+
+console.log(`El mayor de los números introducidos es: ${mayor}`);
