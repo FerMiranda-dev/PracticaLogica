@@ -1,0 +1,27 @@
+/*Escriba un programa que tome la siguiente matriz anidada y la aplane 
+(la convierta en una matriz unidimensional). Utilice cualquier tipo de algoritmo que desee, 
+como devoluciones de llamadas, recursión, etc.
+
+deje que multiDimension = [1, [2, 3, [4, 5, [6]]]];*/
+
+function aplanarMatriz(matriz) {
+    let resultado = [];
+
+    function aplanarElemento(elemento) {
+        if (Array.isArray(elemento)) {
+           
+            for (const item of elemento) {
+                aplanarElemento(item);
+            }
+        } else {
+            resultado.push(elemento);
+        }
+    }
+
+    aplanarElemento(matriz);
+    return resultado;
+}
+
+const multiDimension = [1, [2, 3, [4, 5, [6]]]];
+const matrizAplanada = aplanarMatriz(multiDimension);
+console.log('Matriz aplanada:', matrizAplanada);
