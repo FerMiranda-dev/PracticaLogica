@@ -1,0 +1,28 @@
+/*Escriba un programa que solicite una palabra o frase 
+(puede estar en mayúsculas, tener espacios y puntuación). 
+Determine si la frase o palabra es un palíndromo o no. Ignore la puntuación, los espacios y 
+las letras mayúsculas.*/
+
+// limpiar y preparar la cadena
+
+function limpiarCadena(cadena) {
+    return cadena
+        .toLowerCase()           // Convertir a minúsculas
+        .replace(/[^a-z0-9]/g, ''); // Eliminar espacios y puntuación
+}
+
+
+function esPalindromo(cadena) {
+    const cadenaLimpia = limpiarCadena(cadena);
+    const cadenaInvertida = cadenaLimpia.split('').reverse().join('');
+    return cadenaLimpia === cadenaInvertida;
+}
+
+
+const entrada = prompt("Introduce una palabra o frase:");
+
+if (esPalindromo(entrada)) {
+    console.log(`"${entrada}" es un palíndromo.`);
+} else {
+    console.log(`"${entrada}" no es un palíndromo.`);
+}
