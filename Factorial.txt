@@ -1,0 +1,22 @@
+/*Escriba un programa que solicite un número entero n .
+ Donde  1 <= nResuelva esto usando recursión.*/
+
+
+ // Función recursiva para calcular la suma de los enteros de 1 a n
+function sumaRecursiv(n) {
+    if (n <= 1) {
+        return n; // Caso base
+    } else {
+        return n + sumaRecursiv(n - 1); 
+    }
+}
+
+const n = parseInt(prompt("Introduce un número entero (n):"));
+
+// Verificar que n esté en el rango 
+if (n >= 1) {
+    const resultado = sumaRecursiv(n);
+    console.log(`La suma de todos los enteros de 1 a ${n} es: ${resultado}`);
+} else {
+    console.log("El número debe ser un entero mayor o igual a 1.");
+}
